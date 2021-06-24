@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form validation with Regex</title>
+	<link rel="stylesheet" type="text/css" href="cssdesign.css">
+	<script type="text/javascript">
+		function validate()
+		{
+			var uname = document.getElementById("uname").value;
+			var email = document.getElementById("email").value;
+			var uname_regex = /^([a-zA-Z0-9_\.]{3,30})$/ ;
+			var email_regex = /^([a-z0-9_.]+)@([a-z]+)([.])([a-z]{2,5})(\.)?([a-z]{2,5})?$/ ;
+
+			if(uname_regex.test(uname))
+			{
+				document.getElementById("uname").style.border = "2px solid green";
+				document.getElementById("flashcheck1").style.visibility = "visible";
+			}
+			else
+			{ 
+				document.getElementById("uname").style.border = "2px solid red";
+				document.getElementById("flashmsg1").style.visibility ="visible";
+				document.getElementById("flashcross1").style.visibility = "visible";
+			}
+
+			if(email_regex.test(email))
+			{
+				document.getElementById("email").style.border = "2px solid green";
+				document.getElementById("flashcheck2").style.visibility = "visible";
+			}
+			else
+			{
+				document.getElementById("email").style.border = "2px solid red";
+				document.getElementById("flashmsg2").style.visibility ="visible";
+				document.getElementById("flashcross2").style.visibility = "visible";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<form>
+			Username<br>
+			<input id="uname" class="field" type="text" name="username" placeholder=" E.g. sherlock_holmes">
+			<p class="flashmsg" id="flashmsg1">*Field either empty or invalid username</p>
+			<div id="flashcheck1" class="check1">
+				<img src="check.png" height="30px" width="23px">
+			</div>
+			<div id="flashcross1" class="cross1">
+				<img src="cross.png" height="20px" width="20px">
+			</div>
+			Email<br>
+			<input id="email" class="field" type="text" name="email" placeholder=" E.g. sherlock.holmes781@gmail.com">
+			<p class="flashmsg" id="flashmsg2">*Field either empty or invalid email</p>
+			<div id="flashcheck2" class="check2">
+				<img src="check.png" height="30px" width="23px">
+			</div>
+			<div id="flashcross2" class="cross2">
+				<img src="cross.png" height="20px" width="20px">
+			</div>
+			<hr>
+			<button class="button" onclick="validate()" type="button">Test</button>
+		</form>
+	</div>
+</body>
+</html>
