@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form validation with Regex</title>
+	<link rel="stylesheet" type="text/css" href="cssdesign.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<form>
+			Username<br>
+			<input id="uname" class="field" type="text" name="username" placeholder=" E.g. sherlock_holmes">
+			<p class="flashmsg" id="flashmsg1">*Field either empty or invalid username</p>
+			<div id="flashcheck1" class="check1">
+				<img src="Images/check.png" height="30px" width="23px">
+			</div>
+			<div id="flashcross1" class="cross1">
+				<img src="Images/cross.png" height="20px" width="20px">
+			</div>
+			Email<br>
+			<input id="email" class="field" type="text" name="email" placeholder=" E.g. sherlock.holmes781@gmail.com">
+			<p class="flashmsg" id="flashmsg2">*Field either empty or invalid email</p>
+			<div id="flashcheck2" class="check2">
+				<img src="Images/check.png" height="30px" width="23px">
+			</div>
+			<div id="flashcross2" class="cross2">
+				<img src="Images/cross.png" height="20px" width="20px">
+			</div>
+			<hr>
+			<button class="button" onclick="validate()" type="button">Test</button>
+		</form>
+	</div>
+</body>
+</html>
